@@ -1,8 +1,14 @@
 [
   {
     "id": "1",
-    "name": "Alina Leite Paim",
-    "life": "1919—2011",
-    "photo": "https://prova.olimpiadadehistoria.com.br/attachments/onhb11/transfer/img/5cfaa2d1aaacd5.86742481.jpg"
+    "nome_personalidade": "Alina Leite Paim",
+    "nascimento": "1919",
+    "morte": "2011",
+    "viva": "morta",
+    "cidade_personalidade": "Fortaleza",
+    "estado_personalidade": "CE",
+    "layout": "syne",
+    "paleta_cores": "sol_de_sabado",
+    "imagem_capa": "5cfaa2d1aaacd5.86742481.jpg"
   }
 ]
