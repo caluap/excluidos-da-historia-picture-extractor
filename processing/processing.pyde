@@ -4,7 +4,7 @@ excluidos = {}
 fonts = {}
 colors = {}
 
-border = 10
+border = 12
 
 def setup():
     pixelDensity(displayDensity())
@@ -19,15 +19,15 @@ def setup():
     fonts = {
         "jean-luc": [            
             createFont("fonts/IBMPlexSerif-Regular.ttf", 30),
-            createFont("fonts/JeanLuc-Thin.otf", 30),
+            createFont("fonts/JeanLuc-Thin.otf", 34),
         ],
         "infini": [            
-            createFont("fonts/infini-romain.otf", 30),
-            createFont("fonts/infini-romain.otf", 30),
+            createFont("fonts/infini-romain.otf", 28),
+            createFont("fonts/infini-romain.otf", 28),
         ],
         "syne": [
             createFont("fonts/GangsterGrotesk-Regular.otf", 30),
-            createFont("fonts/Syne-Italic.otf", 30),
+            createFont("fonts/Syne-Italic.otf", 35),
         ]
     }
     
@@ -45,12 +45,14 @@ def printImg(imgUrl):
     
     img.filter(GRAY)
     tint(255, 240, 224)
-
-    ratio = 1.0 * (height - 2*border) / img.height
-    newWidth = img.width * ratio
-    deltaX = (width - 2*border)/2 - (newWidth/2)
     
-    image(img, deltaX, border, img.width * ratio, height - 2*border)
+    auxBorder = border * 5
+
+    ratio = 1.0 * (height - 2 * auxBorder) / img.height
+    newWidth = img.width * ratio
+    deltaX = (width - 2 * border)/2 - (newWidth / 2)
+    
+    image(img, deltaX, auxBorder, img.width * ratio, height - 2*auxBorder)
     
 def printInfo(name, life, layout):
     global fonts
