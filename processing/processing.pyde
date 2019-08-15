@@ -75,8 +75,21 @@ def printCityState(city, state):
     text(u"Excluídos da História, 2019", width - 20, height - 20)
     textAlign(LEFT)
     
+def printLogo(img):
+    global border
+    marg = 10
+    logoSize = 40
+    
+    x0 = width - border - marg
+    y0 = 0 + border + marg
+    
+    image(img, x0 - logoSize, y0, logoSize, logoSize)
+    
     
 def draw():
+    
+    logo = loadImage("../logo-80.png")
+    
     usedNames = []
     i = 0
     for entry in excluidos[i:]:
@@ -103,6 +116,8 @@ def draw():
             printInfo(who, date, entry["layout"])
             
             printCityState(entry["cidade_personalidade"], entry["estado_personalidade"])
+            
+            printLogo(logo)
             
             outputFile = "../output/" + entry["id"].rjust(5,'0') + ".jpg"
             print('(' + str(i) + ') will now save: ' + outputFile)
