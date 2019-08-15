@@ -73,31 +73,38 @@ def printCityState(city, state):
     
     
 def draw():
+    usedNames = []
     i = 0
     for entry in excluidos[i:]:
         global colors, border
         
-        background(colors[entry["paleta_cores"]])
-        fill(0)
+        who = entry["nome_personalidade"]
         
-        rect(border, border, width - (border*2), height - (border*2))
-                            
-        imgUrl = "https://prova.olimpiadadehistoria.com.br/attachments/onhb11/transfer/img/" + entry["imagem_capa"]
-        printImg(imgUrl)
-        
-        date = entry["nascimento"] + u"—"
-        if entry["viva"] == "morta":
-            date += entry["morte"]
-        
-        printInfo(entry["nome_personalidade"], date, entry["layout"])
-        
-        printCityState(entry["cidade_personalidade"], entry["estado_personalidade"])
-        
-        outputFile = "../output/" + entry["id"].rjust(5,'0') + ".jpg"
-        print('(' + str(i) + ') will now save: ' + outputFile)
-        save(outputFile)
-        
-        i += 1
+        if not who[:16].upper() in usedNames: # uses first 16 chars
+            
+            usedNames.append(who[:16].upper())
+            
+            background(colors[entry["paleta_cores"]])
+            fill(0)
+            
+            rect(border, border, width - (border*2), height - (border*2))
+                                
+            imgUrl = "https://prova.olimpiadadehistoria.com.br/attachments/onhb11/transfer/img/" + entry["imagem_capa"]
+            printImg(imgUrl)
+            
+            date = entry["nascimento"] + u"—"
+            if entry["viva"] == "morta":
+                date += entry["morte"]
+            
+            printInfo(who, date, entry["layout"])
+            
+            printCityState(entry["cidade_personalidade"], entry["estado_personalidade"])
+            
+            outputFile = "../output/" + entry["id"].rjust(5,'0') + ".jpg"
+            print('(' + str(i) + ') will now save: ' + outputFile)
+            save(outputFile)
+            
+            i += 1
         
         
     exit()
