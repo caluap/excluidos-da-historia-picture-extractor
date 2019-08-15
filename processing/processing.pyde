@@ -10,10 +10,10 @@ def setup():
     pixelDensity(displayDensity())
     size(960, 540)
     
-    filename = "../excluidos.json"
+    filename = "../all_excluidos.json"
     with open(filename, 'r') as f:
-        global excluidos
-        excluidos = json.load(f)
+        global excluidos        
+        excluidos = json.load(f)[2]["data"]
         
     global fonts
     fonts = {
