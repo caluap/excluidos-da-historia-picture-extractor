@@ -71,6 +71,10 @@ def printCityState(city, state):
     textSize(20)
     text(s, 20, height - 20)
     
+    textAlign(RIGHT)
+    text(u"Excluídos da História, 2019", width - 20, height - 20)
+    textAlign(LEFT)
+    
     
 def draw():
     usedNames = []
