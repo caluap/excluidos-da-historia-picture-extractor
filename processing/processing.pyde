@@ -53,14 +53,14 @@ def printImg(imgUrl):
     
     image(img, deltaX, border, img.width * ratio, height - 2*border)
     
-def printInfo(name, life):
+def printInfo(name, life, layout):
     global fonts
     
     fill(255, 255, 255)    
-    textFont(fonts["syne"][0])
+    textFont(fonts[layout][0])
     text(name, 20, 40)
     
-    textFont(fonts["syne"][1])
+    textFont(fonts[layout][1])
     text(life, 20, 75)
     
     
@@ -80,7 +80,7 @@ def draw():
         if entry["viva"] == "morta":
             date += entry["morte"]
         
-        printInfo(entry["nome_personalidade"], date)
+        printInfo(entry["nome_personalidade"], date, entry["layout"])
         
         outputFile = "../output/" + entry["id"].rjust(5,'0') + ".jpg"
         save(outputFile)
