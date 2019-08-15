@@ -21,10 +21,18 @@ def printImg(imgUrl):
     
     image(img, deltaX, 0, img.width * ratio, height)
     
+def printInfo(name, life):
+    info = name + "\n" + life
+    textSize(40)
+    textLeading(50)
+    fill(255, 255, 255)
+    text(info, 20, 50)
+    
     
 def draw():
     background(0)
     for entry in excluidos:        
         printImg(entry["photo"])
+        printInfo(entry["name"], entry["life"])
         
     noLoop()
