@@ -62,15 +62,22 @@ def printInfo(name, life):
     
     
 def draw():
-    for entry in excluidos:        
-        printImg(entry["photo"])
-        printInfo(entry["name"], entry["life"])
+    for entry in excluidos:
         global colors, border
         
         background(colors[entry["paleta_cores"]])
         fill(0)
         
         rect(border, border, width - (border*2), height - (border*2))
+                            
+        imgUrl = "https://prova.olimpiadadehistoria.com.br/attachments/onhb11/transfer/img/" + entry["imagem_capa"]
+        printImg(imgUrl)
+        
+        date = entry["nascimento"] + u"—"
+        if entry["viva"] == "morta":
+            date += entry["morte"]
+        
+        printInfo(entry["nome_personalidade"], date)
         
         outputFile = "../output/" + entry["id"].rjust(5,'0') + ".jpg"
         save(outputFile)
