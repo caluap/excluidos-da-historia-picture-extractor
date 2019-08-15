@@ -55,4 +55,8 @@ def draw():
         printImg(entry["photo"])
         printInfo(entry["name"], entry["life"])
         
+        outputFile = "../output/" + entry["id"].rjust(5,'0') + ".jpg"
+        save(outputFile)
+        
+        
     noLoop()
