@@ -41,7 +41,6 @@ def setup():
     
 def printImg(imgUrl):
     global border
-    print(imgUrl)
     img = loadImage(imgUrl)
     
     img.filter(GRAY)
@@ -83,7 +82,8 @@ def draw():
         printInfo(entry["nome_personalidade"], date, entry["layout"])
         
         outputFile = "../output/" + entry["id"].rjust(5,'0') + ".jpg"
+        print('will now save: ' + outputFile)
         save(outputFile)
         
         
-    noLoop()
+    exit()
