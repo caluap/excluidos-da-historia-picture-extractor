@@ -59,7 +59,7 @@ def printInfo(name, life, layout):
     
     fill(255, 255, 255)    
     textFont(fonts[layout][0])
-    text(name, 20, 40)
+    text(name, 20, 42)
     
     textFont(fonts[layout][1])
     text(life, 20, 75)
