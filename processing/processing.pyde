@@ -64,6 +64,13 @@ def printInfo(name, life, layout):
     textFont(fonts[layout][1])
     text(life, 20, 75)
     
+def printCityState(city, state):
+    global fonts
+    s = city + ", " + state
+    textFont(fonts["syne"][0])
+    textSize(20)
+    text(s, 20, height - 20)
+    
     
 def draw():
     for entry in excluidos:
@@ -82,6 +89,8 @@ def draw():
             date += entry["morte"]
         
         printInfo(entry["nome_personalidade"], date, entry["layout"])
+        
+        printCityState(entry["cidade_personalidade"], entry["estado_personalidade"])
         
         outputFile = "../output/" + entry["id"].rjust(5,'0') + ".jpg"
         print('will now save: ' + outputFile)
