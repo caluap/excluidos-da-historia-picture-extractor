@@ -18,16 +18,16 @@ def setup():
     global fonts
     fonts = {
         "jean-luc": [            
-            createFont("fonts/IBMPlexSerif-Regular.ttf", 40),
-            createFont("fonts/JeanLuc-Thin.otf", 40),
+            createFont("fonts/IBMPlexSerif-Regular.ttf", 30),
+            createFont("fonts/JeanLuc-Thin.otf", 30),
         ],
         "infini": [            
-            createFont("fonts/infini-romain.otf", 40),
-            createFont("fonts/infini-romain.otf", 40),
+            createFont("fonts/infini-romain.otf", 30),
+            createFont("fonts/infini-romain.otf", 30),
         ],
         "syne": [
-            createFont("fonts/GangsterGrotesk-Regular.otf", 40),
-            createFont("fonts/Syne-Italic.otf", 40),
+            createFont("fonts/GangsterGrotesk-Regular.otf", 30),
+            createFont("fonts/Syne-Italic.otf", 30),
         ]
     }
     
@@ -55,10 +55,10 @@ def printInfo(name, life):
     
     fill(255, 255, 255)    
     textFont(fonts["syne"][0])
-    text(name, 20, 50)
+    text(name, 20, 40)
     
     textFont(fonts["syne"][1])
-    text(life, 20, 95)
+    text(life, 20, 75)
     
     
 def draw():
