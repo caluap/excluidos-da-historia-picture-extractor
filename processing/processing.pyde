@@ -80,9 +80,9 @@ def draw():
         
         who = entry["nome_personalidade"]
         
-        if not who[:16].upper() in usedNames: # uses first 16 chars
+        if not who[:10].upper() in usedNames and entry["imagem_capa"] != None: # uses first 16 chars
             
-            usedNames.append(who[:16].upper())
+            usedNames.append(who[:10].upper())
             
             background(colors[entry["paleta_cores"]])
             fill(0)
