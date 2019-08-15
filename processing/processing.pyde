@@ -43,6 +43,9 @@ def printImg(imgUrl):
     global border
     print(imgUrl)
     img = loadImage(imgUrl)
+    
+    img.filter(GRAY)
+    tint(255, 240, 224)
 
     ratio = 1.0 * (height - 2*border) / img.height
     newWidth = img.width * ratio
