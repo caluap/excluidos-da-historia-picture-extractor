@@ -83,6 +83,7 @@ def printLogo(img):
     x0 = width - border - marg
     y0 = 0 + border + marg
     
+    noTint()    
     image(img, x0 - logoSize, y0, logoSize, logoSize)
     
     
