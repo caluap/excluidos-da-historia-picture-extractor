@@ -73,7 +73,8 @@ def printCityState(city, state):
     
     
 def draw():
-    for entry in excluidos:
+    i = 0
+    for entry in excluidos[i:]:
         global colors, border
         
         background(colors[entry["paleta_cores"]])
@@ -93,8 +94,10 @@ def draw():
         printCityState(entry["cidade_personalidade"], entry["estado_personalidade"])
         
         outputFile = "../output/" + entry["id"].rjust(5,'0') + ".jpg"
-        print('will now save: ' + outputFile)
+        print('(' + str(i) + ') will now save: ' + outputFile)
         save(outputFile)
+        
+        i += 1
         
         
     exit()
